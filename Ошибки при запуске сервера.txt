@@ -1,0 +1,50 @@
+﻿Microsoft Windows [Version 6.1.7601]
+(c) Корпорация Майкрософт (Microsoft Corp.), 2009. Все права защищены.
+
+
+C:\Django>pip3 install virtualenv
+Requirement already satisfied: virtualenv in c:\python\python37-32\lib\site-packages (16.1.0)
+
+
+C:\Django>virtualenv venv
+Using base prefix 'c:\python\python37-32'New python executable in C:\Django\venv\Scripts\python.exeInstalling setuptools, pip, wheel...done.
+
+
+C:\Django>venv\Scripts\activate.bat
+
+
+(venv) C:\Django>python -V
+Python 3.7.1
+
+
+(venv) C:\Django>pip install django
+Collecting django Using cached https://files.pythonhosted.org/packages/fd/9a/0c028ea0fe4f5803dda1a7afabeed958d0c8b79b0fe762ffbf728db3b90d/Django-2.1.4-py3-none-any.whlCollecting pytz (from django) Using cached https://files.pythonhosted.org/packages/f8/0e/2365ddc010afb3d79147f1dd544e5ee24bf4ece58ab99b16fbb465ce6dc0/pytz-2018.7-py2.py3-none-any.whlInstalling collected packages: pytz, djangoSuccessfully installed django-2.1.4 pytz-2018.7
+
+
+(venv) C:\Django>django-admin startproject server
+
+
+(venv) C:\Django>cd server\
+
+
+(venv) C:\Django\server>python manage.py runserver
+Performing system checks...
+
+
+System check identified no issues (0 silenced).
+
+
+You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.December 16, 2018 - 02:35:14Django version 2.1.4, using settings 'server.settings'Starting development server at http://127.0.0.1:8000/Quit the server with CTRL-BREAK.Unhandled exception in thread started by .wrapper at 0x037DB0C0>Traceback (most recent call last): File "C:\Django\venv\lib\site-packages\django\utils\autoreload.py", line 225, in wrapper fn(args, *kwargs)
+File "C:\Django\venv\lib\site-packages\django\core\management\commands\runserver.py", line 139, in innerrun
+ipv6=self.useipv6, threading=threading, servercls=self.servercls)
+File "C:\Django\venv\lib\site-packages\django\core\servers\basehttp.py", line 185, in run httpd = httpdcls(serveraddress, WSGIRequestHandler, ipv6=ipv6)
+File "C:\Django\venv\lib\site-packages\django\core\servers\basehttp.py", line 66, in init
+super().init(args, *kwargs)
+File "c:\python\python37-32\Lib\socketserver.py", line 449, in init
+self.serverbind()
+File "c:\python\python37-32\Lib\wsgiref\simpleserver.py", line 50, in serverbind
+HTTPServer.serverbind(self)
+File "c:\python\python37-32\Lib\http\server.py", line 139, in serverbind
+self.servername = socket.getfqdn(host)
+File "c:\python\python37-32\Lib\socket.py", line 676, in getfqdn hostname, aliases, ipaddrs = gethostbyaddr(name)UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc6 in position 0: invalid continuation byte
